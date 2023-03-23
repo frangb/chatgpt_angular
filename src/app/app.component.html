@@ -1,14 +1,18 @@
+<h2>Preguntar a ChatGPT:</h2>
+<h4>Modelo: text-davinci-003</h4>
 
+<textarea class="pregunta" [(ngModel)]="consulta" rows="30" cols="120"></textarea><br />
+<button mat-fab extended (click)="enviar()">
+  <mat-icon>send</mat-icon>
+  Send
+</button>
 
-<h1>Consulta a enviar:</h1>
-
-  <textarea class="pregunta" [(ngModel)]="consulta" rows="30" cols="120"></textarea><br />
-  <button mat-fab extended (click)="enviar()">
-    <mat-icon>send</mat-icon>
-    Send
-  </button>
-  <pre>
+<button mat-fab extended (click)="pedirImagen()">
+<mat-icon>image</mat-icon>
+  imagen
+</button>
+<pre>
     {{ respuesta }}
-  </pre>
+</pre>
 
-
+<img [src]="imagen" alt="cargando...">

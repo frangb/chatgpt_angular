@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   consulta = '';
   respuesta = '';
+  imagen = '';
 
   ngOnInit(): void {
   }
@@ -23,8 +24,14 @@ export class AppComponent implements OnInit {
     this.chatgpt.getDataFromOpenAI(this.consulta).subscribe(data => {
       console.log(data);
       this.respuesta = data;
-  })
+  })}
 
+  pedirImagen() {
+
+    this.chatgpt.getImageFromOpenAI(this.consulta).subscribe(data => {
+      this.imagen = data;
+      console.log(data);
+    });
 
   }
 }
